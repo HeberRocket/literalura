@@ -1,8 +1,7 @@
-# Descripción del Programa de Spring
+# Descripción del Programa LITERALURA
 
-![Spring Framework](https://spring.io/images/spring-logo-2022-2x.png)
 
-Este programa de Spring implementa una aplicación de consola para buscar y gestionar información sobre libros, haciendo uso de varias clases y servicios. A continuación, se detalla su funcionamiento:
+Este repositorio alberga el proyecto finalizado como parte del desafió del programa Alura, donde se desarrolló una aplicación utilizando Java, el framework Spring y el IDE IntelliJ IDEA, integrándose con una base de datos PostgreSQL. Este programa, diseñado como una aplicación de consola, permite la búsqueda y gestión de información sobre libros, aprovechando una serie de clases y servicios especializados. A continuación, se detalla su funcionamiento:
 
 ## Estructura y Componentes Principales
 
@@ -23,6 +22,9 @@ Contiene los métodos principales para interactuar con el usuario a través de u
 #### Métodos principales:
 
 - `muestraElMenu()`: Despliega el menú y maneja la lógica de navegación entre las opciones.
+  
+  ![Menu](https://github.com/HeberRocket/literalura/blob/main/imgns_literalura/menu.png)
+   
 - `buscarLibro()`: Permite buscar libros por título a través de una API externa y guardar los resultados en la base de datos.
 - `listarLibros()`, `listarAutores()`, `listarAutoresVivos()`, `listarPorIdioma()`: Métodos para listar libros y autores basados en diferentes criterios.
 
@@ -35,6 +37,8 @@ Contiene los métodos principales para interactuar con el usuario a través de u
 
 - `getDatosBusqueda()`: Solicita al usuario el título del libro, consume la API externa para obtener datos en formato JSON y los convierte a objetos `DatosBusqueda`.
 - `buscarLibro()`: Utiliza `getDatosBusqueda()` para obtener los datos de búsqueda, los convierte en objetos `Libro`, y los guarda en la base de datos si no existen previamente.
+  
+  ![Menu](https://github.com/HeberRocket/literalura/blob/main/imgns_literalura/buscar.png)
 
 ### Persistencia de Datos:
 
@@ -44,9 +48,17 @@ Contiene los métodos principales para interactuar con el usuario a través de u
 ### Listados y Filtrados:
 
 - `listarLibros()`: Imprime todos los libros registrados en la base de datos.
+  
+ ![Menu](https://github.com/HeberRocket/literalura/blob/main/imgns_literalura/listarLibro.png)
+ 
 - `listarAutores()`: Agrupa los libros por autores y muestra los detalles de cada autor y sus libros.
+  
+ ![Menu](https://github.com/HeberRocket/literalura/blob/main/imgns_literalura/ListarAutores.png)
+ 
 - `listarAutoresVivos()`: Filtra y muestra los autores que estaban vivos en un año específico proporcionado por el usuario.
 - `listarPorIdioma()`: Filtra y muestra los libros según el idioma especificado por el usuario.
+  
+  ![Menu](https://github.com/HeberRocket/literalura/blob/main/imgns_literalura/listarIdioma.png)
 
 ## Ejecución del Programa
 
@@ -72,28 +84,38 @@ Contiene los métodos principales para interactuar con el usuario a través de u
 - Usuario elige la opción 1.
 - Introduce el título del libro.
 - El programa busca el libro en la API, muestra los detalles y lo guarda en la base de datos si es nuevo.
-
+  
+ ![Menu](https://github.com/HeberRocket/literalura/blob/main/imgns_literalura/prueba1.png)
+ 
 ### Listar Libros Registrados:
 
 - Usuario elige la opción 2.
 - El programa consulta la base de datos y lista todos los libros registrados.
-
+  
+ ![Menu](https://github.com/HeberRocket/literalura/blob/main/imgns_literalura/prueba2.png)
+ 
 ### Listar Autores Registrados:
 
 - Usuario elige la opción 3.
 - El programa filtra y muestra los autores registrados a la vez de que muestra su fecha de nacimiento, muerte y los libros de los cuales es autor.
+  
+  ![Menu](https://github.com/HeberRocket/literalura/blob/main/imgns_literalura/prueba3.png)
   
 ### Listar Autores Vivos en un Año Determinado:
 
 - Usuario elige la opción 4.
 - Introduce el año de interés.
 - El programa filtra y muestra los autores que estaban vivos en ese año.
-
+  
+ ![Menu](https://github.com/HeberRocket/literalura/blob/main/imgns_literalura/prueba4.png)
+ 
 ### Selección de la Opción de Listar por Idioma:
 
 - El usuario selecciona la opción 5 para listar libros por idioma.
 - El usuario ingresa el idioma deseado, en este caso, "es" para Español.
 - El programa verifica si el idioma ingresado es válido y luego busca libros en la base de datos en ese idioma. En este caso encuentra libros en español:
+ 
+ ![Menu](https://github.com/HeberRocket/literalura/blob/main/imgns_literalura/prueba5.png)
 
 ---
 
