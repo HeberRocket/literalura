@@ -76,6 +76,7 @@ Contiene los métodos principales para interactuar con el usuario a través de u
 
 - Para la opción de buscar libros, se consume la API externa de Gutendex para obtener datos JSON, que luego se convierten en objetos y se guardan en la base de datos si no existen previamente.
 - Para listar información, se consultan los datos directamente desde la base de datos y se formatean para mostrar en la consola.
+- El LibroRepository facilita la interacción con la base de datos para realizar operaciones sobre la entidad Libro, utilizando tanto métodos CRUD predefinidos de JpaRepository como consultas JPQL personalizadas. Esto permite una gestión eficiente y estructurada de los datos de libros en la aplicación.
 
 ## Ejemplo de Uso
 
