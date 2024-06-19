@@ -135,21 +135,18 @@ public class Principal {
     private void listarAutores() {
         // Obtener todos los libros
         List<Libro> libros = repositorio.librooos();
-
         // Agrupar libros por autor
         Map<String, List<Libro>> autoresConLibros = libros.stream()
                 .flatMap(libro -> libro.getAutor().stream().map(autor -> Map.entry(autor, libro)))
                 .collect(Collectors.groupingBy(Map.Entry::getKey, Collectors.mapping(Map.Entry::getValue, Collectors.toList())));
 
         System.out.println("*** Autores y sus libros registrados ***");
-
         // Iterar sobre el mapa y mostrar la información
         autoresConLibros.forEach((autor, listaLibros) -> {
             // Obtener la primera instancia de fechas de nacimiento y fallecimiento
             Libro primerLibro = listaLibros.get(0);
             Year fechaNacimiento = primerLibro.getFechasNacimiento();
             Year fechaFallecimiento = primerLibro.getFechasMuerte();
-
 
             System.out.println("\n\tAutor: " + autor);
             System.out.println("\tFecha de nacimiento: " + (fechaNacimiento != null ? fechaNacimiento : "Desconocida"));
